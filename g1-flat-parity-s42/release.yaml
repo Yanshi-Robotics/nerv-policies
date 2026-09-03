@@ -1,0 +1,16 @@
+# g1-flat-parity-s42 —— 宇树 G1 29 自由度平地行走策略（yanshi-rl-lab 平价门批次，seed 42）
+schema_version: 1
+policy_id: g1-flat-parity-s42
+robot: unitree/g1/dof29
+family: humanoid
+files:
+  policy.onnx: {sha256: 0fd3ee8753a5bdcf267bfb471376bb41435c6bdfd8e4b7a4ce6bec75abfe01c7}
+  contract.json: {schema_version: 2, sha256: 1d24eb62a920710b56244eaea91dcdd4f077cafc9bc80bfda7d430bb10c6d4b4}
+pd_mode: implicit          # 契约 v2 自带此字段，这里只是镜像
+command_ranges: {vx: [-0.5, 1.0], vy: [-0.3, 0.3], wz: [-0.8, 0.8]}   # 来自 contract.json 的 command_ranges
+lin_cmd_deadband: null     # ⚠️ 未登记：旧 anima-one 没记录训练侧死区；部署前从训练 run 的 env.yaml 核实
+turn_vx: null              # ⚠️ 未实测原地转身特性；先按 g1-29dof-turn 的方法测一次再填
+source:
+  training_run: "yanshi-rl-lab logs/rsl_rl/2026-07-30_00-18-03_yanshi-g1-flat-parity-s42"
+  isaac_lab_version: 2.3.2
+  detail: manifest.yaml / model-card.md / evidence/（随本目录一起从旧 anima-one 迁来，2026-09-02）

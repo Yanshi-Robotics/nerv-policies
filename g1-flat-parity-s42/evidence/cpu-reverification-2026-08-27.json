@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "date": "2026-08-27",
+  "policy_sha256": "0fd3ee8753a5bdcf267bfb471376bb41435c6bdfd8e4b7a4ce6bec75abfe01c7",
+  "contract_sha256": "1d24eb62a920710b56244eaea91dcdd4f077cafc9bc80bfda7d430bb10c6d4b4",
+  "source_revision": "yanshi-robotics/yanshi-unitree-g1-dof29@yanshi-g1-flat-parity-s42",
+  "scene": "pinned unitree_mujoco G1 scene_29dof.xml",
+  "runtime": {
+    "mujoco": "3.10.0",
+    "onnxruntime": "1.27.0",
+    "device": "CPUExecutionProvider"
+  },
+  "gates": {
+    "turn_in_place_deg": 280.44,
+    "turn_walk_radius_m": 0.60,
+    "walk_8s_m": 4.30,
+    "slow_walk_8s_m": 2.20
+  },
+  "contact_veto": false,
+  "verdict": "passed_4_of_4",
+  "scope": "CPU sim2sim re-verification of the existing published artifact; not a training reproduction and not an APT end-to-end acceptance."
+}

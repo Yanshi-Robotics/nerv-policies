@@ -1,0 +1,26 @@
+# g1-29dof-turn —— 宇树 G1 29 自由度平地行走策略（能原地转身）
+schema_version: 1
+policy_id: g1-29dof-turn
+robot: unitree/g1/dof29
+family: humanoid
+files:
+  policy.onnx: {sha256: 07400671a8fffae172d261688bc84f0e60d3d656156b564dbdc0a4638fb695c6}
+  contract.json: {note: "schema v2 前身：obs_terms / timing / actuators 齐全，无 command_ranges 字段，范围写在下面"}
+# 力矩模式：训练侧 ImplicitActuator（隐式 PD）→ 部署侧把 kd 写进 dof_damping，力矩只发 kp·(q*−q)。
+# 写成外部力矩 −kd·qd 会让关节速度从第一步就高频振铃，约 1 秒倒（2026-07-24 一整天诊断换来的）。
+pd_mode: implicit
+# 命令范围（训练 run 的 params/env.yaml）。
+command_ranges: {vx: [-0.5, 1.0], vy: [-0.3, 0.3], wz: [-0.8, 0.8]}
+# ⛔ 线速度命令只能取 0 或 ≥ 0.2 m/s：训练带「线速度死区吸附」，(0, 0.2] 这一段策略一次都没见过。
+lin_cmd_deadband: 0.2
+# 转弯时要带多少前进速度才迈得动腿。0 = 能真正原地转。实测（同屋同起点，wz=0.8 转 90°）：
+#   turn_vx=0.0 → 91.9°，2.30 s，40.0°/s，前后漂移 0.06 m   ← 选它
+#   turn_vx=0.3 → 92.2°，2.38 s，38.7°/s，前后漂移 0.52 m
+turn_vx: 0.0
+foot_bodies: [left_ankle_roll_link, right_ankle_roll_link]
+source:
+  training_run: "unitree_rl_lab/logs/rsl_rl/unitree_g1_29dof_velocity_turnaligned/2026-07-27_07-41-40_s2e5-aligned-s42/"
+  task: Unitree-G1-29dof-Velocity-TurnAligned
+  tuned_vx: 0.6
+  note: "奖励配置对齐上游三处（偏航跟踪 2.0、抬脚奖励、髋偏航罚 −0.1）后主门从 15.7° 跳到 299°；见 locomotion 项目 S2-实验5"
+  previously_lived_at: "alice-house/policies/g1-29dof-turn（2026-09-02 迁出）"

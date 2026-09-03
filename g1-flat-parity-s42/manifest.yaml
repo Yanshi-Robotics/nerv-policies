@@ -1,0 +1,57 @@
+schema_version: 1
+policy_id: g1-flat-parity-s42
+version: v1
+status: registered
+source:
+  code_repository: Yanshi-Robotics/yanshi-rl-lab
+  migration_baseline: 997ece09e506122cce531339a0df61405502f344
+  logged_training_commit: 2d906705d20b7e9f129e02e3f612903f5eb6f04e
+  current_history_equivalent_commit: b87acd75c79018462c5303d0e431935bc99704a2
+  export_and_acceptance_commit: ebd7430127745b1658fd3621aa6df6f3d06a8644
+  source_result_declared_commit: 2f219fdbd880113cc0dc455ef8c23895e367d442
+  published_release_evaluation_commit: 9db7285b24048ca26804961edb403f08737fd006
+  hugging_face_repository: yanshi-robotics/yanshi-unitree-g1-dof29
+  hugging_face_revision: yanshi-g1-flat-parity-s42
+  hugging_face_commit: efc6209a46a48756cb5f9a8584061b50a14899f2
+target:
+  hugging_face_repository: yanshi-robotics/anima-one-g1-29dof
+  hugging_face_revision: g1-flat-parity-s42-v1
+  hugging_face_commit: 6ce0a4a6b01499a98fb878d78a229905bfcdec1e
+  verified_utc: "2026-08-27T21:35:00Z"
+files:
+  policy.onnx:
+    size_bytes: 1657864
+    sha256: 0fd3ee8753a5bdcf267bfb471376bb41435c6bdfd8e4b7a4ce6bec75abfe01c7
+    role: primary_runtime
+  model_9999.pt:
+    size_bytes: 10011509
+    sha256: f0af0e2a58776ab6bdc5a01fb5b63662a7cdd6adb13adfc93d80dc2e863dfaf5
+    role: trusted_training_checkpoint
+    warning: Load only inside a trusted Python environment; the ONNX file is the public runtime artifact.
+  contract.json:
+    size_bytes: 6850
+    sha256: 1d24eb62a920710b56244eaea91dcdd4f077cafc9bc80bfda7d430bb10c6d4b4
+  agent.yaml:
+    size_bytes: 1149
+    sha256: 18c555f348d94e42f0e5c94284b2e8862caef61a5009e3b77564b4ed2bc68b93
+  env.yaml:
+    size_bytes: 35910
+    sha256: 1f6af179c3b0ca34fe623207f197fe49911089b7877c742fd5751fc031884670
+    role: legacy_environment_snapshot
+    warning: Contains a predecessor absolute asset path; evidence only, not a portable training input.
+training:
+  origin: migrated_predecessor_run
+  source_run_id: 2026-07-30_00-18-03_yanshi-g1-flat-parity-s42
+  task: velocity-flat
+  seed: 42
+  max_iterations: 10000
+  isaac_lab_version: 2.3.2
+  anima_one_full_training_completed: false
+  local_run_materials_copied: false
+evaluation:
+  gate_file: evaluation/contracts/velocity-flat-turn.yaml
+  original_result: evidence/source-sim2sim-result.json
+  cpu_reverification: evidence/cpu-reverification-2026-08-27.json
+  current_acceptance: evidence/acceptance-2026-08-28.json
+  verdict: passed_4_of_4_no_contact_veto
+  limitation: Metrics are necessary conditions; the source acceptance also included continuous-video review.

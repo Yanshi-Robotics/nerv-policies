@@ -1,0 +1,406 @@
+{
+ "task": "Yanshi-Velocity-Flat-Unitree-G1-v0",
+ "generated_utc": "2026-07-30T07:54:00+00:00",
+ "joint_names": [
+  "left_hip_pitch_joint",
+  "right_hip_pitch_joint",
+  "waist_yaw_joint",
+  "left_hip_roll_joint",
+  "right_hip_roll_joint",
+  "waist_roll_joint",
+  "left_hip_yaw_joint",
+  "right_hip_yaw_joint",
+  "waist_pitch_joint",
+  "left_knee_joint",
+  "right_knee_joint",
+  "left_shoulder_pitch_joint",
+  "right_shoulder_pitch_joint",
+  "left_ankle_pitch_joint",
+  "right_ankle_pitch_joint",
+  "left_shoulder_roll_joint",
+  "right_shoulder_roll_joint",
+  "left_ankle_roll_joint",
+  "right_ankle_roll_joint",
+  "left_shoulder_yaw_joint",
+  "right_shoulder_yaw_joint",
+  "left_elbow_joint",
+  "right_elbow_joint",
+  "left_wrist_roll_joint",
+  "right_wrist_roll_joint",
+  "left_wrist_pitch_joint",
+  "right_wrist_pitch_joint",
+  "left_wrist_yaw_joint",
+  "right_wrist_yaw_joint"
+ ],
+ "default_joint_pos": [
+  -0.10000000149011612,
+  -0.10000000149011612,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.30000001192092896,
+  0.30000001192092896,
+  0.30000001192092896,
+  0.30000001192092896,
+  -0.20000000298023224,
+  -0.20000000298023224,
+  0.25,
+  -0.25,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.9700000286102295,
+  0.9700000286102295,
+  0.15000000596046448,
+  -0.15000000596046448,
+  0.0,
+  0.0,
+  0.0,
+  0.0
+ ],
+ "obs_terms": [
+  {
+   "name": "base_ang_vel",
+   "scale": 0.20000000298023224,
+   "history_length": 5,
+   "dim": 3
+  },
+  {
+   "name": "projected_gravity",
+   "scale": null,
+   "history_length": 5,
+   "dim": 3
+  },
+  {
+   "name": "velocity_commands",
+   "scale": null,
+   "history_length": 5,
+   "dim": 3
+  },
+  {
+   "name": "joint_pos_rel",
+   "scale": null,
+   "history_length": 5,
+   "dim": 29
+  },
+  {
+   "name": "joint_vel_rel",
+   "scale": 0.05000000074505806,
+   "history_length": 5,
+   "dim": 29
+  },
+  {
+   "name": "last_action",
+   "scale": null,
+   "history_length": 5,
+   "dim": 29
+  }
+ ],
+ "action": {
+  "scale": 0.25,
+  "dim": 29,
+  "clip": null
+ },
+ "timing": {
+  "policy_dt_s": 0.02,
+  "physics_dt_s": 0.005,
+  "decimation": 4
+ },
+ "schema_version": 2,
+ "policy": null,
+ "joint_sdk_names": [
+  "left_hip_pitch_joint",
+  "left_hip_roll_joint",
+  "left_hip_yaw_joint",
+  "left_knee_joint",
+  "left_ankle_pitch_joint",
+  "left_ankle_roll_joint",
+  "right_hip_pitch_joint",
+  "right_hip_roll_joint",
+  "right_hip_yaw_joint",
+  "right_knee_joint",
+  "right_ankle_pitch_joint",
+  "right_ankle_roll_joint",
+  "waist_yaw_joint",
+  "waist_roll_joint",
+  "waist_pitch_joint",
+  "left_shoulder_pitch_joint",
+  "left_shoulder_roll_joint",
+  "left_shoulder_yaw_joint",
+  "left_elbow_joint",
+  "left_wrist_roll_joint",
+  "left_wrist_pitch_joint",
+  "left_wrist_yaw_joint",
+  "right_shoulder_pitch_joint",
+  "right_shoulder_roll_joint",
+  "right_shoulder_yaw_joint",
+  "right_elbow_joint",
+  "right_wrist_roll_joint",
+  "right_wrist_pitch_joint",
+  "right_wrist_yaw_joint"
+ ],
+ "joint_ids_map": [
+  0,
+  6,
+  12,
+  1,
+  7,
+  13,
+  2,
+  8,
+  14,
+  3,
+  9,
+  15,
+  22,
+  4,
+  10,
+  16,
+  23,
+  5,
+  11,
+  17,
+  24,
+  18,
+  25,
+  19,
+  26,
+  20,
+  27,
+  21,
+  28
+ ],
+ "default_root_pos_w": [
+  0.0,
+  0.0,
+  0.800000011920929
+ ],
+ "actuators": {
+  "N7520-14.3": {
+   "joint_names": [
+    "left_hip_pitch_joint",
+    "right_hip_pitch_joint",
+    "waist_yaw_joint",
+    "left_hip_yaw_joint",
+    "right_hip_yaw_joint"
+   ],
+   "stiffness": [
+    100.0,
+    100.0,
+    200.0,
+    100.0,
+    100.0
+   ],
+   "damping": [
+    2.0,
+    2.0,
+    5.0,
+    2.0,
+    2.0
+   ],
+   "effort_limit": [
+    88.0,
+    88.0,
+    88.0,
+    88.0,
+    88.0
+   ],
+   "armature": [
+    0.009999999776482582,
+    0.009999999776482582,
+    0.009999999776482582,
+    0.009999999776482582,
+    0.009999999776482582
+   ]
+  },
+  "N7520-22.5": {
+   "joint_names": [
+    "left_hip_roll_joint",
+    "right_hip_roll_joint",
+    "left_knee_joint",
+    "right_knee_joint"
+   ],
+   "stiffness": [
+    100.0,
+    100.0,
+    150.0,
+    150.0
+   ],
+   "damping": [
+    2.0,
+    2.0,
+    4.0,
+    4.0
+   ],
+   "effort_limit": [
+    139.0,
+    139.0,
+    139.0,
+    139.0
+   ],
+   "armature": [
+    0.009999999776482582,
+    0.009999999776482582,
+    0.009999999776482582,
+    0.009999999776482582
+   ]
+  },
+  "N5020-16": {
+   "joint_names": [
+    "waist_roll_joint",
+    "waist_pitch_joint",
+    "left_shoulder_pitch_joint",
+    "right_shoulder_pitch_joint",
+    "left_ankle_pitch_joint",
+    "right_ankle_pitch_joint",
+    "left_shoulder_roll_joint",
+    "right_shoulder_roll_joint",
+    "left_ankle_roll_joint",
+    "right_ankle_roll_joint",
+    "left_shoulder_yaw_joint",
+    "right_shoulder_yaw_joint",
+    "left_elbow_joint",
+    "right_elbow_joint",
+    "left_wrist_roll_joint",
+    "right_wrist_roll_joint"
+   ],
+   "stiffness": [
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0
+   ],
+   "damping": [
+    5.0,
+    5.0,
+    1.0,
+    1.0,
+    2.0,
+    2.0,
+    1.0,
+    1.0,
+    2.0,
+    2.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "effort_limit": [
+    25.0,
+    25.0,
+    25.0,
+    25.0,
+    25.0,
+    25.0,
+    25.0,
+    25.0,
+    25.0,
+    25.0,
+    25.0,
+    25.0,
+    25.0,
+    25.0,
+    25.0,
+    25.0
+   ],
+   "armature": [
+    0.009999999776482582,
+    0.009999999776482582,
+    0.009999999776482582,
+    0.009999999776482582,
+    0.009999999776482582,
+    0.009999999776482582,
+    0.009999999776482582,
+    0.009999999776482582,
+    0.009999999776482582,
+    0.009999999776482582,
+    0.009999999776482582,
+    0.009999999776482582,
+    0.009999999776482582,
+    0.009999999776482582,
+    0.009999999776482582,
+    0.009999999776482582
+   ]
+  },
+  "W4010-25": {
+   "joint_names": [
+    "left_wrist_pitch_joint",
+    "right_wrist_pitch_joint",
+    "left_wrist_yaw_joint",
+    "right_wrist_yaw_joint"
+   ],
+   "stiffness": [
+    40.0,
+    40.0,
+    40.0,
+    40.0
+   ],
+   "damping": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "effort_limit": [
+    5.0,
+    5.0,
+    5.0,
+    5.0
+   ],
+   "armature": [
+    0.009999999776482582,
+    0.009999999776482582,
+    0.009999999776482582,
+    0.009999999776482582
+   ]
+  }
+ },
+ "pd_mode": "implicit",
+ "obs_dim": 480,
+ "history_length": 5,
+ "command_ranges": {
+  "lin_vel_x": [
+   -0.5,
+   1.0
+  ],
+  "lin_vel_y": [
+   -0.3,
+   0.3
+  ],
+  "ang_vel_z": [
+   -0.8,
+   0.8
+  ]
+ },
+ "foot_bodies": [
+  "left_ankle_roll_link",
+  "right_ankle_roll_link"
+ ],
+ "root_joint_name": "floating_base_joint",
+ "base_link": "torso_link",
+ "layout_carryover": {
+  "dumped_from_task": "Yanshi-Velocity-Flat-Unitree-G1-v0",
+  "dumped_utc": "2026-07-30T07:54:00+00:00",
+  "why_valid": "Dumped by a 2-iteration run of the exact same task/cfg class as the parity run (exporter bug fix landed after training started); observation/action layout and gains are class-determined, not checkpoint-determined."
+ }
+}

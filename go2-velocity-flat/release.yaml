@@ -1,0 +1,16 @@
+# go2-velocity-flat —— 宇树 Go2 四足平地行走策略
+schema_version: 1
+policy_id: go2-velocity-flat
+robot: unitree/go2
+family: quadruped
+files:
+  policy.onnx: {sha256: 2dd04f0c5733ab27cf6230aad7f0b82ca2250a6bf6cd8f4943265d2b5c297125}
+# 力矩模式：训练侧显式 PD → 部署侧自己算 tau = kp·(q*−q) − kd·qd，并把模型里的关节阻尼/库仑摩擦清零。
+# 与 G1 正好相反，搞反了狗当场走不动/抖翻。
+pd_mode: explicit
+# 四足的步态在原地打转时照样迈腿，所以 turn_vx = 0（实测）。
+turn_vx: 0.0
+command_ranges: null   # ⚠️ 未登记：contract.json 没有导出，旧清单也没写。部署前先从训练 run 的 env.yaml 补齐，别猜。
+lin_cmd_deadband: null # 同上
+source:
+  previously_lived_at: "alice-house/policies/go2-velocity-flat（2026-09-02 迁出）"

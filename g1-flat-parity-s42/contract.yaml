@@ -1,0 +1,24 @@
+schema_version: 1
+policy_id: g1-flat-parity-s42
+policy_version: v1
+runtime_contract:
+  schema_version: 2
+  path: robot/g1/contracts/g1-flat-parity-s42-v1.json
+  sha256: 1d24eb62a920710b56244eaea91dcdd4f077cafc9bc80bfda7d430bb10c6d4b4
+embodiment:
+  robot_id: g1_29dof
+  joint_count: 29
+observation:
+  dimension: 480
+  history_frames: 5
+action:
+  dimension: 29
+  scale: 0.25
+timing:
+  policy_period_seconds: 0.02
+  physics_step_seconds: 0.005
+  decimation: 4
+control:
+  pd_mode: implicit
+  root_joint_name: floating_base_joint
+  base_link: torso_link

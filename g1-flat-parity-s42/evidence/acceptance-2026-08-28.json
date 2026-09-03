@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "date": "2026-08-28",
+  "registered_policy": {
+    "policy_id": "g1-flat-parity-s42",
+    "version": "v1",
+    "origin": "migrated_predecessor_release",
+    "policy_sha256": "0fd3ee8753a5bdcf267bfb471376bb41435c6bdfd8e4b7a4ce6bec75abfe01c7",
+    "contract_sha256": "1d24eb62a920710b56244eaea91dcdd4f077cafc9bc80bfda7d430bb10c6d4b4",
+    "full_training_completed_in_anima_one": false
+  },
+  "mujoco_reverification": {
+    "scene_bundle_sha256": "04c74fae21d39fc76bb78bc8f74d061280e64388814853715b12e9cf53d7ba0b",
+    "frozen_gates": {
+      "turn_in_place_deg": 280.4357932424084,
+      "turn_walk_radius_m": 0.5967744202107841,
+      "walk_8s_m": 4.301274393558981,
+      "slow_walk_8s_m": 2.197451047385843,
+      "contact_veto": false,
+      "passed": true
+    },
+    "command_capabilities": {
+      "slow_command_cap_m_s": 0.3,
+      "slow_forward_8s_m": 2.197451047385843,
+      "slow_mean_net_speed_m_s": 0.27468138092323036,
+      "cruise_command_cap_m_s": 0.6,
+      "cruise_forward_8s_m": 4.301274393558981,
+      "cruise_mean_net_speed_m_s": 0.5376592991948727,
+      "cruise_minus_slow_m": 2.1038233461731384,
+      "minimum_difference_m": 0.8,
+      "left_turn_8s_deg": 280.4357932424084,
+      "right_turn_8s_deg": -289.20029600410913,
+      "contact_veto": false,
+      "passed": true
+    }
+  },
+  "training_smoke": {
+    "workflow_status": "passed",
+    "policy_acceptance_status": "failed_expected_not_promoted",
+    "run_id": "20260828T125741Z-s42-09c5d902",
+    "source_commit": "494b2e94014d6ea8fc4af43972331416db04be01",
+    "source_worktree_dirty": false,
+    "recipe_sha256": "09c5d9020b662cc6bb5e238835228e20a4f5fc2bf037a0344ec70105f06b445d",
+    "seed": 42,
+    "num_envs": 32,
+    "iterations": 2,
+    "environment_steps": 1536,
+    "gpu": "NVIDIA GeForce RTX 5070 Ti",
+    "driver": "580.159.03",
+    "queue_job": 159,
+    "batch_terminal_normalized_in_launcher": true,
+    "started_utc": "2026-08-28T12:57:49+00:00",
+    "completed_utc": "2026-08-28T12:58:10+00:00",
+    "exports": {
+      "policy_onnx_sha256": "34578b49bed8428f70b3a6149e492b68336e00e49a8aedafdcfee1a8f6b2e68b",
+      "policy_torchscript_sha256": "076af9b37cf6dda49431b0bfac2aa0ffa9455d74cd5e947c92e2cd9df89283b1",
+      "contract_sha256": "585499ad8b34523de7a9707c30fe7b0eb0e7e1adb1250693b401fd0a84da09a5"
+    },
+    "evaluation": {
+      "passed": false,
+      "fell_at_seconds": 1.2,
+      "veto_hits": [
+        "turn_in_place",
+        "turn_while_walking",
+        "walk_no_regression",
+        "slow_walk_no_regression"
+      ],
+      "report_sha256": "01da55df73b3db514e60b8b54aad971bcaf5e1ae5b5b553c2baef258030276cb"
+    }
+  },
+  "apt_awi_mcp": {
+    "transport": "Streamable HTTP MCP",
+    "awi_v1_conformant": true,
+    "trust_state": "trusted",
+    "world_build_id": "runtime-basic-14170113db9c",
+    "world_output_sha256": "e98fef135f8280c12240560f52a920a557017b460252c2ee9ed57b24682f6c94",
+    "camera": {
+      "name": "head_front",
+      "png_bytes": 37604,
+      "sha256": "3e357d715669fb4732e84eed9f6731fb4f6a13b650efded24a4465dbdad3c349"
+    },
+    "actions": {
+      "slow_forward": {
+        "requested_m": 1.0,
+        "command_cap_m_s": 0.3,
+        "measured_m": 1.0215824976388799,
+        "elapsed_s": 4.42,
+        "reason": "target_reached",
+        "stopped": true
+      },
+      "cruise_forward": {
+        "requested_m": 1.0,
+        "command_cap_m_s": 0.6,
+        "measured_m": 1.0295457616839236,
+        "elapsed_s": 3.8,
+        "reason": "target_reached",
+        "stopped": true
+      },
+      "turn_left": {
+        "requested_deg": 45.0,
+        "measured_deg": 46.60325312871306,
+        "reason": "target_reached",
+        "stopped": true
+      },
+      "turn_right": {
+        "requested_deg": 45.0,
+        "measured_deg": 45.83295589805661,
+        "reason": "target_reached",
+        "stopped": true
+      }
+    },
+    "invalid_speed_below_0_3_rejected": true,
+    "progress_notifications_received": true
+  },
+  "claim_boundary": {
+    "training_smoke_passed": true,
+    "migrated_policy_reverified": true,
+    "formal_seed_42_training_reproduced": false,
+    "sim2real_verified": false,
+    "physical_robot_verified": false
+  }
+}
